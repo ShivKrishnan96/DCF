@@ -18,9 +18,9 @@ def createExcel(dls, nameOfFile):
     urllib.urlretrieve(dls, nameOfFile)
 
     if test_book(nameOfFile):
-        print("success")
+        print("successfully created" + nameOfFile)
     else:
-        print("fail")
+        print("failed to make" + nameOfFile)
 
 
 
