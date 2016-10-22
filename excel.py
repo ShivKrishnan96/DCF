@@ -1,10 +1,9 @@
 
 import urllib
 from xlrd import open_workbook, XLRDError
-dls = "https://www.sec.gov/Archives/edgar/data/51143/000104746916010329/Financial_Report.xlsx" 
-dlsWrong = "https://www.sec.gov/Archives/edgar/data/51143/$$$000104746916010329/Financial_Report.xlsx" 
+#dls = "https://www.sec.gov/Archives/edgar/data/51143/000104746916010329/Financial_Report.xlsx" 
+#dlsWrong = "https://www.sec.gov/Archives/edgar/data/51143/$$$000104746916010329/Financial_Report.xlsx" 
 
-x = urllib.urlretrieve(dls, "myExcel.xls")
 
 def test_book(filename):
     try:
@@ -14,17 +13,14 @@ def test_book(filename):
     else:
         return True
 
+#create an excel file from url dls, save as nameOfFile
+def createExcel(dls, nameOfFile):
+    urllib.urlretrieve(dls, nameOfFile)
 
-
-
-if test_book("myExcel.xls"):
-    print("success")
-else:
-    print("fail")
-
-#    print("success")
-#else:
-#    print("failed")
+    if test_book(nameOfFile):
+        print("success")
+    else:
+        print("fail")
 
 
 
