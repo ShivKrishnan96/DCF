@@ -19,8 +19,9 @@ def createExcel(dls, nameOfFile):
 
     if test_book(nameOfFile):
         print("successfully created " + nameOfFile)
+        return True
     else:
         print("failed to make " + nameOfFile)
-
+        return False
 
 
